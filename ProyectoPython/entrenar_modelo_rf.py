@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report
 import joblib
 from collections import Counter
 
-# Ruta de tu base
+
 CARPETA_BASE = "base_sonidos"
 
 # Cargar espectros
@@ -32,7 +32,7 @@ X = [vec[:min_len] for vec in X]
 X = np.array(X)
 y = np.array(y)
 
-# 🧹 Filtrar clases con menos de 2 muestras
+#Filtrar clases con menos de 2 muestras
 conteo = Counter(y)
 X_filtrado = []
 y_filtrado = []

@@ -13,7 +13,7 @@ MODELO_PATH = "modelo_sonidos_rf.pkl"
 
 # Cargar modelo entrenado
 modelo = joblib.load(MODELO_PATH)
-print("✅ Modelo cargado. Escuchando...\n")
+print("Modelo cargado. Escuchando...\n")
 
 def calcular_espectro(audio):
     ventana = np.hanning(len(audio))

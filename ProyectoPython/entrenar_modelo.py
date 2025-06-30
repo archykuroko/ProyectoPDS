@@ -6,7 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
 import joblib
 
-# Ruta de tu base
+
 CARPETA_BASE = "base_sonidos"
 
 # Cargar espectros
