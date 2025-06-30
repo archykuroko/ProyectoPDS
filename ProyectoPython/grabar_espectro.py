@@ -4,7 +4,7 @@ import os
 import json
 
 # --- CONFIGURACIÓN ---
-DURACION = 1.0  # segundos de grabación
+DURACION = 3.0  # segundos de grabación
 FS = 44100      # Hz
 CARPETA_SONIDOS = "base_sonidos"
 
@@ -12,9 +12,9 @@ CARPETA_SONIDOS = "base_sonidos"
 os.makedirs(CARPETA_SONIDOS, exist_ok=True)
 
 # --- ETIQUETA ---
-etiqueta = input("🔖 Ingresa la etiqueta del sonido (ej: 'alarma', 'bebe', 'timbre'): ").strip().lower()
+etiqueta = input("Ingresa la etiqueta del sonido (ej: 'alarma', 'bebe', 'timbre'): ").strip().lower()
 
-print(f"🎙️ Grabando sonido para la etiqueta '{etiqueta}'...")
+print(f"Grabando sonido para la etiqueta '{etiqueta}'...")
 audio = sd.rec(int(DURACION * FS), samplerate=FS, channels=1, dtype='float32')
 sd.wait()
 audio = audio.flatten()
@@ -41,4 +41,4 @@ ruta_archivo = os.path.join(CARPETA_SONIDOS, f"{etiqueta}.json")
 with open(ruta_archivo, "w") as f:
     json.dump(datos, f)
 
-print(f"✅ Espectro del sonido '{etiqueta}' guardado en {ruta_archivo}")
+print(f"Espectro del sonido '{etiqueta}' guardado en {ruta_archivo}")
